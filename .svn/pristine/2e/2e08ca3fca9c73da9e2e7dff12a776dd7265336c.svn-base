@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+import scrapy
+
+
+class JobboleSpider(scrapy.Spider):
+    name = 'jobbole'
+    allowed_domains = ['blog.jobbdole.com']
+    start_urls = ['http://blog.jobbole.com/112832/']
+
+    def parse(self, response):
+        title='//*[ @ id = "post-112832"]/div[1]/h1/text()'
+        title1 = '//div[@class="entry-header"]/h1/text()'
+
+        re_selector=response.xpath(title1)
+        pass
